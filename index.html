@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="it">
+<head>
+    <link href="CSS/style.css" rel="stylesheet" type="text/css"/>
+    <script src="SCRIPT/script.js" type="text/javascript"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy birthday Martina</title>
+
+  <!-- Font gotico -->
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="vignette"></div>
+
+  <!-- Immagini decorative -->
+  <img src="img/badtz2.png" alt="Decorazione" class="decor top-right" />
+  <img src="img/hapy.gif" alt="Decorazione" class="decor bottom-left"/>
+
+
+  <main class="container" role="main" aria-labelledby="title">
+    <h1 id="title" class="gothic">Happy birthday Martina</h1>
+
+    <p class="subtitle">On this day of shadows and moonbeams, may your heart find solace in the embrace of the nigth</p>
+
+    <div class="audio-controls" aria-label="Controlli audio">
+      <button id="playBtn" class="btn">Play</button>
+      <button id="pauseBtn" class="btn">Pause</button>
+    </div>
+
+    <div class="visuals">
+      <div class="candles" aria-hidden="true">
+        <span class="flame"></span>
+        <span class="flame"></span>
+        <span class="flame"></span>
+      </div>
+    </div>
+  </main>
+
+  <!-- Audio nascosto -->
+  <audio id="bgAudio" loop autoplay muted preload="auto" src="SCRIPT/mcr-song.mp3"></audio>
+
+  <!-- Script -->
+  <script src="script.js" defer></script>
+</body>
+</html>
+

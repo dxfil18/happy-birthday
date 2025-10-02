@@ -1,0 +1,219 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 22 set 2025, 20:59:01
+    Author     : filippo
+*/
+
+/* styles.css - dark/goth theme */
+
+:root{
+  --bg:#0b0b0d;
+  --panel:#0f0f12;
+  --accent:#7a0b1d; /* deep wine */
+  --muted:#9b99a3;
+  --glow: 0 8px 30px rgba(122,11,29,0.35);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient(1200px 800px at 20% 10%, rgba(122,11,29,0.06), transparent),
+              radial-gradient(1000px 700px at 80% 90%, rgba(10,10,12,0.6), transparent),
+              var(--bg);
+  color:#eee;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:2rem;
+}
+
+/* subtle vignette / texture */
+#vignette{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.7));
+  mix-blend-mode:multiply;
+}
+
+/* Main card */
+.container{
+  z-index:2;
+  max-width:900px;
+  width:100%;
+  text-align:center;
+  padding:3.5rem;
+  border-radius:18px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: var(--glow);
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+/* Gothic headline */
+.gothic{
+  margin:0 0 0.5rem 0;
+  font-family: 'UnifrakturMaguntia', cursive;
+  font-size:4.2rem;
+  letter-spacing:0.02em;
+  color: #fff;
+  text-shadow:
+    0 6px 18px rgba(10,10,12,0.7),
+    0 0 12px rgba(122,11,29,0.25);
+  transform: rotate(-1deg);
+}
+
+/* subtitle */
+.subtitle{
+  margin:0 0 1.8rem 0;
+  color:var(--muted);
+  font-weight:300;
+  font-size:1rem;
+}
+
+/* Audio controls */
+.audio-controls{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:0.6rem;
+  flex-wrap:wrap;
+  margin-top:1.6rem;
+}
+
+.btn{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.06);
+  padding:0.6rem 1rem;
+  border-radius:10px;
+  color:#fff;
+  cursor:pointer;
+  font-weight:600;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.btn:active{ transform:translateY(1px) }
+.btn.small{ padding:0.45rem 0.7rem; font-size:0.85rem }
+
+/* file input styling */
+#audioFile{
+  display:none;
+}
+.file-label{
+  display:inline-block;
+  padding:0.55rem 0.9rem;
+  border-radius:10px;
+  border:1px dashed rgba(255,255,255,0.06);
+  cursor:pointer;
+  background:transparent;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+/* hint */
+.hint{
+  width:100%;
+  margin-top:0.6rem;
+  color:var(--muted);
+  font-size:0.85rem;
+  text-align:center;
+}
+
+/* candle visuals */
+.visuals{
+  margin-top:2rem;
+  display:flex;
+  justify-content:center;
+}
+.candles{
+  display:flex;
+  gap:1rem;
+  align-items:flex-end;
+}
+.candles .flame{
+  width:6px;
+  height:42px;
+  background:linear-gradient(180deg,#2a0a0f,#050203);
+  border-radius:8px;
+  position:relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+  transform-origin:center bottom;
+}
+.candles .flame::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:-12px;
+  transform:translateX(-50%);
+  width:18px;
+  height:28px;
+  border-radius:50% 50% 40% 40%;
+  background: radial-gradient(circle at 50% 30%, rgba(255,210,110,0.98) 0%,
+                             rgba(255,150,60,0.6) 35%,
+                             rgba(122,11,29,0.0) 70%);
+  filter: blur(6px);
+  animation: flicker 2s infinite;
+  opacity:.95;
+}
+
+/* flicker animation */
+@keyframes flicker{
+  0% { transform: translateX(-50%) scaleY(1) rotate(-2deg); opacity:1 }
+  25%{ transform: translateX(-50%) scaleY(0.95) rotate(2deg); opacity:.9 }
+  50%{ transform: translateX(-50%) scaleY(1.05) rotate(-1deg); opacity:1 }
+  75%{ transform: translateX(-50%) scaleY(0.92) rotate(1deg); opacity:.92 }
+  100%{ transform: translateX(-50%) scaleY(1) rotate(-2deg); opacity:1 }
+}
+
+/* footer */
+.credit{
+  margin-top:1.6rem;
+  color:var(--muted);
+  font-size:0.82rem;
+  text-align:center;
+}
+
+/* responsive */
+@media (max-width:520px){
+  .gothic{ font-size:2.6rem }
+  .container{ padding:2rem }
+}
+
+/* Immagini decorative */
+.decor {
+  position: fixed;
+  width: 300px;      /* dimensione media, puoi ridurre o aumentare */
+  height: auto;
+  opacity: 0.8;
+  z-index: 1;        /* sotto il contenuto principale */
+  pointer-events: none; /* non blocca i click */
+}
+
+.decor.top-right {
+  top: 10px;
+  right: 10px;
+}
+
+.decor.bottom-left {
+  bottom: 10px;
+  left: 10px;
+}
+
+/* Mobile: riduci un po' le immagini */
+@media (max-width: 600px) {
+  .decor {
+    width: 80px;
+    opacity: 0.7;
+  }
+}
+
+.tenor-gif-embed iframe {
+    background: transparent;
+}
